@@ -21,7 +21,7 @@ function getTransporter() {
     throw new Error('SMTP_EMAIL and SMTP_PASSWORD are not set.');
   }
   return nodemailer.createTransport({
-    host: 'smtp.office365.com',
+    host: process.env.SMTP_HOST || 'smtp-relay.brevo.com',
     port: 587,
     secure: false,
     auth: {
