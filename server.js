@@ -22,7 +22,7 @@ function getTransporter() {
   }
   return nodemailer.createTransport({
     host: 'smtp.office365.com',
-    port: 25,
+    port: 587,
     secure: false,
     auth: {
       user: process.env.SMTP_EMAIL,
