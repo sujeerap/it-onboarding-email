@@ -44,7 +44,7 @@ app.post('/send-email', async (req, res) => {
 
     const toAddresses = Array.isArray(to) ? to.join(', ') : to;
     const info = await transporter.sendMail({
-      from: `"${fromLabel || 'Onboarding System'}" <${process.env.SMTP_EMAIL}>`,
+      from: `"${fromLabel || 'Onboarding System'}" <${process.env.SMTP_FROM || process.env.SMTP_EMAIL}>`,
       to: toAddresses,
       subject,
       text: text || '',
